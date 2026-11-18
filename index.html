@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A family guide to adding calories to everyday foods for children ages 1 to 5 who need help gaining weight.">
+<title>Small Meals, More Energy | A Family Guide</title>
+<style>
+:root {
+  color-scheme: light;
+  --ink: #253f34;
+  --accent: #9b3c2b;
+  --paper: #fffaf1;
+  --line: #ddded0;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 1.1rem/1.55 system-ui, sans-serif; }
+h1, h2, h3, p { margin: 0; }
+p + p { margin-top: .65rem; }
+h1, h2 { font-family: Georgia, serif; line-height: 1.08; }
+h1 { font-size: clamp(2.75rem, 7vw, 5.5rem); letter-spacing: -.045em; }
+h2 { font-size: clamp(1.85rem, 4vw, 2.65rem); letter-spacing: -.025em; margin-bottom: .55rem; }
+h3 { font-size: 1.12rem; line-height: 1.3; }
+a { color: inherit; text-underline-offset: .2em; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.wrap { max-width: 68rem; width: calc(100% - 2rem); margin-inline: auto; }
+nav { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+button { font: inherit; color: inherit; background: white; border: 1px solid #829187; border-radius: .55rem; cursor: pointer; padding: .45rem .8rem; }
+button:hover { background: #eef4e8; }
+nav strong, nav button { font-size: .9rem; }
+.hero { padding: clamp(1.6rem, 5vw, 3.6rem); background: #e5edda; border-radius: 1.35rem; margin: 1.4rem 0 2.1rem; }
+.hero p { max-width: 52ch; margin-top: .75rem; }
+.hero .audience { font-size: .92rem; font-weight: 700; }
+main section + section, .print-sheet + .print-sheet { margin-top: 2rem; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
+.card { border: 1px solid var(--line); background: #fff; border-radius: .95rem; overflow: hidden; }
+.card-copy { padding: .85rem; }
+.card p { margin-top: .35rem; }
+.food { display: grid; place-items: center; height: 8.25rem; }
+.oats { background: #f2d9bd; --rim: #fdf3da; --meal: #d9ad78; --topping: #fff7e9; }
+.beans { background: #d5e4bf; --rim: #f9f3d6; --meal: #98694c; --topping: #a5c765; }
+.pasta { background: #f3d2bb; --rim: #fff1da; --meal: #edb554; --topping: #d68d28; }
+.plate {
+  position: relative; width: 7rem; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle, var(--meal) 0 52%, var(--rim) 54% 69%, #d8baa0 70%);
+  box-shadow: .2rem .4rem .5rem #50382442;
+}
+.plate::after {
+  content: ""; position: absolute; inset: 30% 27%; border-radius: 57% 48% 59% 45%;
+  background: var(--topping); transform: rotate(-22deg);
+}
+.beans .plate::after { inset: 26% 30%; border-radius: 65% 40% 65% 40%; box-shadow: inset .55rem -.15rem #779b47; }
+.pasta .plate::after { inset: 26%; background: repeating-linear-gradient(15deg, #f8cb6c 0 6px, #be741e 7px 9px, transparent 10px 13px); }
+.note { margin-top: 1rem; padding: .8rem 1rem; background: #f7ebdd; border-left: .25rem solid var(--accent); border-radius: .35rem; }
+.rhythm { display: flex; flex-wrap: wrap; gap: .4rem; padding: 0; margin: .85rem 0; list-style: none; }
+.rhythm li { background: #e5edda; border: 1px solid #bac9b0; border-radius: 2rem; padding: .3rem .65rem; font-size: .94rem; }
+details { background: #e5edda; border-radius: .65rem; margin-top: 1.2rem; padding: .8rem 1rem; }
+summary { font-weight: 700; cursor: pointer; }
+details p { margin-top: .45rem; }
+.checklist { padding-left: 1.25rem; margin-block: .55rem; }
+.checklist li + li { margin-top: .25rem; }
+footer { margin: 1.5rem 0 2rem; padding-top: .7rem; border-top: 1px solid var(--line); font-size: .9rem; }
+footer ul { margin: .3rem 0; padding-left: 1.25rem; }
+.print-only { display: none; }
+@media (max-width: 650px) {
+  .cards { grid-template-columns: 1fr; }
+  .card { display: grid; grid-template-columns: minmax(6rem, 32%) 1fr; }
+  .food { height: 100%; min-height: 6.25rem; }
+  .plate { width: min(75%, 6rem); }
+}
+@page { size: letter; margin: .65in; }
+@media print {
+  body { background: white; font-size: 12pt; }
+  .wrap { width: auto; max-width: none; }
+  nav, details { display: none; }
+  .print-only { display: block; }
+  .print-sheet + .print-sheet { break-before: page; margin-top: 0; }
+  .hero { margin: 0 0 1.15rem; padding: 1.25rem; }
+  h1 { font-size: 34pt; }
+  h2 { font-size: 23pt; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: .55rem; }
+  .card { display: block; break-inside: avoid; }
+  .food { height: 6rem; min-height: 0; }
+  .plate { width: 4.6rem; }
+  .hero, .food, .note, .rhythm li { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  footer { margin-bottom: 0; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Page tools">
+    <strong>Family nutrition guide</strong>
+    <button type="button" id="print">Print or save as PDF</button>
+  </nav>
+
+  <main>
+    <div class="print-sheet">
+      <header class="hero">
+        <h1>Small Meals,<br>More Energy</h1>
+        <p class="audience">For families of children ages 1 to 5 who need help gaining weight</p>
+        <p>If your child’s care team has suggested extra calories, start with a food your child already likes. A small add-in can give them more energy even if they eat about the same amount.</p>
+      </header>
+
+      <section aria-labelledby="add">
+        <h2 id="add">Add to foods your child already eats</h2>
+        <p>Pick one idea that fits what your family has on hand. Try it at the next meal or snack.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="food oats" aria-hidden="true"><span class="plate"></span></div>
+            <div class="card-copy">
+              <h3>Oatmeal + plain full-fat yogurt</h3>
+              <p>Stir the yogurt into warm oatmeal. It adds calories and protein.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="food beans" aria-hidden="true"><span class="plate"></span></div>
+            <div class="card-copy">
+              <h3>Mashed beans + avocado</h3>
+              <p>Mash ripe avocado into the beans for extra calories.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="food pasta" aria-hidden="true"><span class="plate"></span></div>
+            <div class="card-copy">
+              <h3>Soft pasta + olive oil</h3>
+              <p>Toss warm pasta with a little olive oil before serving.</p>
+            </div>
+          </article>
+        </div>
+        <p class="note"><strong>Start with what works for your child.</strong> Choose foods that fit their allergies and serve them in a form your child can chew and swallow safely.</p>
+      </section>
+    </div>
+
+    <div class="print-sheet">
+      <section aria-labelledby="routine">
+        <h2 id="routine">Make time for meals and snacks</h2>
+        <p>Offer meals and snacks at regular times. Start with a small serving and let your child decide how much to eat. You can offer more if they’re still hungry.</p>
+        <ul class="rhythm" aria-label="Example meal and snack schedule">
+          <li>Breakfast</li><li>Morning snack</li><li>Lunch</li><li>Afternoon snack</li><li>Dinner</li>
+        </ul>
+        <p>If your child often fills up on juice or sweet drinks, offer water between meals.</p>
+      </section>
+
+      <section aria-labelledby="plan">
+        <h2 id="plan">Make a plan for follow-up</h2>
+        <p>Ask your child’s doctor or dietitian to help you choose what to try and when to check growth again.</p>
+        <ul class="checklist">
+          <li>What can I add to a food my child likes?</li>
+          <li>When should we check their growth again?</li>
+          <li>Would a nutrition drink help? If so, when should I offer it?</li>
+        </ul>
+        <p>Tell the care team if your child often coughs or has trouble swallowing while eating.</p>
+        <details>
+          <summary>Try it. Your child likes pasta. What could you add?</summary>
+          <p>Try a little olive oil. Now pick another food your child likes and name one thing you could mix into it.</p>
+        </details>
+        <p class="note print-only"><strong>Try it.</strong> Your child likes pasta. What could you add? One idea is a little olive oil. Pick another food your child likes and name one thing you could mix into it.</p>
+        <p class="note"><strong>Need help in the Cleveland area?</strong> <a href="https://www.uhhospitals.org/rainbow/services/pediatric-nutrition-services">UH Rainbow Pediatric Nutrition Services</a> offers individual visits with a dietitian.</p>
+      </section>
+
+      <footer>
+        <strong>Sources</strong>
+        <ul>
+          <li><a href="https://doi.org/10.1542/peds.2025-075764">AAP and NASPGHAN guideline on faltering weight</a> (2026), recommendations 4–6.</li>
+          <li><a href="https://gikids.org/digestive-topics/high-calorie-nutrition/">GiKids family guide to high-calorie nutrition</a>.</li>
+        </ul>
+        <p>NTRN 436 · Pediatric Nutrition · Family education resource</p>
+      </footer>
+    </div>
+  </main>
+</div>
+<script>
+  document.getElementById("print").addEventListener("click", () => window.print());
+</script>
+</body>
+</html>
